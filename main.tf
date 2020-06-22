@@ -10,22 +10,11 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "myterraformgroup" {
-  name     = "Test1"
-  location = "eastus2"
+  name     = "Testcicd"
+  location = "Central us"
 
   tags = {
     environment = "Terraform Demo"
   }
 }
 
-# Create virtual network
-resource "azurerm_virtual_network" "myterraformnetwork" {
-  name                = "myVnet"
-  address_space       = ["10.0.0.0/16"]
-  location            = "eastus2"
-  resource_group_name = azurerm_resource_group.myterraformgroup.name
-
-  tags = {
-    environment = "Terraform Demo"
-  }
-}
